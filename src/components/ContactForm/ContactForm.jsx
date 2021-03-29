@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactForm.module.css';
-import * as contactActions from '../../redux/contacts/contacts-action';
+// import * as contactActions from '../../redux/contacts/contacts-action';
 import { connect } from 'react-redux';
+import { addContact } from '../../redux/contacts/contacts-operations';
 
 class ContactForm extends Component {
   state = {
@@ -83,7 +84,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  addContact: contactActions.addContact,
+  addContact,
 };
 
 ContactForm.propTypes = {

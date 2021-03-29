@@ -1,14 +1,17 @@
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import { createAction } from '@reduxjs/toolkit';
 
 //========================================================
 //Redux Toolkit
+const addContactRequest = createAction('contacts/addContactRequest');
+const addContactSuccess = createAction('contacts/addContactSuccess');
+const addContactError = createAction('contacts/addContactError');
 
 const deleteContact = createAction('contact/delete');
 const filterContacts = createAction('contact/filter');
-const addContact = createAction('contact/add', (name, number) => ({
-  payload: { id: uuidv4(), name, number },
-}));
+// const addContact = createAction('contact/add', (name, number) => ({
+//   payload: { id: uuidv4(), name, number },
+// }));
 const showAllContacts = createAction('contact/show');
 
 //===========================================================
@@ -24,4 +27,11 @@ const showAllContacts = createAction('contact/show');
 //   return { type: types.FILTER, payload: text };
 // };
 
-export { addContact, deleteContact, filterContacts, showAllContacts };
+export {
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  deleteContact,
+  filterContacts,
+  showAllContacts,
+};

@@ -5,8 +5,8 @@ import {
 } from '@reduxjs/toolkit';
 import reducers from './contacts/contacts-reducer';
 import {
-  persistStore,
-  persistReducer,
+  // persistStore,
+  // persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -14,21 +14,22 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+// import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 //import * as types from './contacts/contacts-types';
 
 //==================================================
 // Redux Toolkit
 
-const persistConfig = {
-  key: 'contacts',
-  storage,
-  blacklist: ['filter'],
-};
+// const persistConfig = {
+//   key: 'contacts',
+//   storage,
+//   blacklist: ['filter'],
+// };
 
 const contactsReducer = combineReducers({
   items: reducers.itemsReducers,
   filter: reducers.filterReducer,
+  loading: reducers.loading,
 });
 
 const middleware = getDefaultMiddleware({
@@ -37,18 +38,18 @@ const middleware = getDefaultMiddleware({
   },
 });
 
-const persistedReducer = persistReducer(persistConfig, contactsReducer);
+// const persistedReducer = persistReducer(persistConfig, contactsReducer);
 
 let store = configureStore({
   reducer: {
-    contacts: persistedReducer,
+    contacts: contactsReducer,
   },
   middleware,
 });
 
-let persistor = persistStore(store);
+// let persistor = persistStore(store);
 
-export { store, persistor };
+export { store };
 
 //=======================================================
 // without Redux Toolkit
