@@ -1,16 +1,7 @@
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 // import * as contactsAction from '../../redux/contacts/contacts-action';
 import s from './ContactList.module.css';
-import {
-  deleteContact,
-  initContacts,
-} from '../../redux/contacts/contacts-operations';
+
 import { Component } from 'react';
-import {
-  getAllContacts,
-  getFilterValue,
-} from '../../redux/contacts/contacts-selectors';
 
 class ContactList extends Component {
   componentDidMount() {
@@ -48,27 +39,4 @@ class ContactList extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  contacts: getAllContacts(state),
-  filterValue: getFilterValue(state),
-});
-
-const mapDispatchToProps = {
-  deleteContact,
-  initContacts,
-};
-
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }),
-  ),
-
-  filterValue: PropTypes.string.isRequired,
-  deleteContact: PropTypes.func.isRequired,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
+export default ContactList;
