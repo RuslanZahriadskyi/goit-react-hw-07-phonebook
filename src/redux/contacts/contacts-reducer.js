@@ -4,19 +4,22 @@ import {
   addContactRequest,
   addContactSuccess,
   addContactError,
-  deleteContact,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
   filterContacts,
+  initContactsRequest,
+  initContactsSuccess,
+  initContactsError,
 } from './contacts-action';
 
-//===============================================================
+//================================================b===============
 //Redux Toolkit
 
 const itemsReducers = createReducer([], {
-  [addContactSuccess]: (state, { payload }) => {
-    console.log(payload);
-    return [...state, payload];
-  },
-  [deleteContact]: (state, { payload }) =>
+  [initContactsSuccess]: (_, { payload }) => payload,
+  [addContactSuccess]: (state, { payload }) => [...state, payload],
+  [deleteContactSuccess]: (state, { payload }) =>
     state.filter(contact => contact.id !== payload),
 });
 
@@ -24,6 +27,12 @@ const loading = createReducer(false, {
   [addContactRequest]: () => true,
   [addContactSuccess]: () => false,
   [addContactError]: () => false,
+  [deleteContactRequest]: () => true,
+  [deleteContactSuccess]: () => false,
+  [deleteContactError]: () => false,
+  [initContactsRequest]: () => true,
+  [initContactsSuccess]: () => false,
+  [initContactsError]: () => false,
 });
 
 const filterReducer = createReducer('', {

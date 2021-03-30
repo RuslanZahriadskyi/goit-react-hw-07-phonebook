@@ -3,16 +3,20 @@ import { createAction } from '@reduxjs/toolkit';
 
 //========================================================
 //Redux Toolkit
+
+const initContactsRequest = createAction('contacts/initContactsRequest');
+const initContactsSuccess = createAction('contacts/initContactsSuccess');
+const initContactsError = createAction('contacts/initContactsError');
+
 const addContactRequest = createAction('contacts/addContactRequest');
 const addContactSuccess = createAction('contacts/addContactSuccess');
 const addContactError = createAction('contacts/addContactError');
 
-const deleteContact = createAction('contact/delete');
+const deleteContactRequest = createAction('contacts/deleteContactRequest');
+const deleteContactSuccess = createAction('contacts/deleteContactSuccess');
+const deleteContactError = createAction('contacts/deleteContactError');
+
 const filterContacts = createAction('contact/filter');
-// const addContact = createAction('contact/add', (name, number) => ({
-//   payload: { id: uuidv4(), name, number },
-// }));
-const showAllContacts = createAction('contact/show');
 
 //===========================================================
 // without Redux Toolkit
@@ -31,7 +35,11 @@ export {
   addContactRequest,
   addContactSuccess,
   addContactError,
-  deleteContact,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
+  initContactsRequest,
+  initContactsSuccess,
+  initContactsError,
   filterContacts,
-  showAllContacts,
 };
