@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "netlify deploy -p",
-    "api-server": "json-server https://goit-react-hw-07-phonebook-ruslan-zahriadskyi.netlify.app/contacts --watch db.json "
+    "api-server": "json-server --host https://goit-react-hw-07-phonebook-ruslan-zahriadskyi.netlify.app/"
   },
   "eslintConfig": {
     "extends": [
