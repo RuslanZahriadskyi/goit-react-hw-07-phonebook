@@ -11,7 +11,7 @@ import {
   initContactsError,
 } from './contacts-action';
 
-axios.defaults.baseURL = 'https://goit-react-hw-07-phonebook-ruslan-zahriadskyi.netlify.app/';
+axios.defaults.baseURL = 'http://localhost:3004';
 
 const initContacts = () => async dispatch => {
   dispatch(initContactsRequest());
