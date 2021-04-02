@@ -1,13 +1,13 @@
 {
   "contacts": [
     {
-      "name": "Tomy Brait",
-      "number": "+38-050-55-11-571",
+      "name": "Test Add",
+      "number": "+45-789-45-61-230",
       "id": 1
     },
     {
-      "name": "lol lol",
-      "number": "+48-464-45-45-456",
+      "name": "Test Filter",
+      "number": "+12-235-47-89-610",
       "id": 2
     }
   ]

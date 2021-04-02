@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ContactList from './ContactList';
 import { contactsOperations, contactsSelectors } from '../../redux/contacts';
+// import { getSearchedContacts } from '../../redux/contacts/contacts-selectors';
 
 const mapStateToProps = state => ({
-  contacts: contactsSelectors.getAllContacts(state),
+  searchedContacts: contactsSelectors.getSearchedContacts(state),
   filterValue: contactsSelectors.getFilterValue(state),
 });
 
